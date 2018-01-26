@@ -1,0 +1,36 @@
+.tabs {
+
+    &-container {
+        width: 50%;
+        
+        a {
+            text-decoration: none;
+        }
+
+        h2 {
+            color: @grey;
+        }
+        hr {
+            border: 2px solid @grey;
+        }
+
+        &.mod-encode {
+            h2 {
+                color: @blue;
+                text-decoration: none;
+            }
+            hr {
+                border: 2px solid @blue;
+            }
+        }
+
+        &.mod-decode {
+            h2 {
+                color: @orange;
+            }
+            hr {
+                border: 2px solid @orange;
+            }
+        }
+    }
+}
