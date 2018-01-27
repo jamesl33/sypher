@@ -32,23 +32,37 @@ class Steganography():
         self.height = self.image.size[1]
         self.channels = len(self.pixels[0, 0])
 
-    def encode_file(self, file_path):
+    def encode_file(self, file_name):
         """ Encode a file into a 'png' or 'bmp' image
 
         Keyword arguments:
-        file_path -- Path to file which will be hidden in the image
+        file_name -- Path to file which will be hidden in the image
         """
-        data = bitstring.ConstBitStream(filename=file_path)
-        data = data.read('bin')
-        self._encode_bitstring(data)
+        file_data = bitstring.ConstBitStream(filename=file_name)
+        file_data = file_data.read('bin')
+
+        file_name = bitstring.BitString(file_name.encode()).bin
+        file_name_length = '{0:08b}'.format(len(file_name))
+        file_name = file_name_length + file_name
+
+        bstring = file_name + file_data
+
+        self._encode_bitstring(bstring)
 
     def decode_file(self):
         """ Decode a file hidden in a 'png' or 'bmp' image """
         data = self._decode_bitstring()
 
-        # TODO Make output filename match name of original file
-        with open('steg-output', 'wb+') as output_file:
-            data.tofile(output_file)
+        file_name_length = data[:8].bin
+        file_name_length = int(file_name_length, 2)
+
+        file_name = data[:8 + file_name_length][8:]
+        file_name = file_name.tobytes().decode()
+
+        file_data = data[8 + file_name_length:]
+
+        with open('steg-' + file_name, 'wb+') as output_file:
+            file_data.tofile(output_file)
 
     def _encode_bitstring(self, bstring):
         """ Encode a 'bitstring' object into a 'png' or 'bmp' image
