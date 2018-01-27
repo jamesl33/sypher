@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Author: James Lee
 Email: jamesl33info@gmail.com
-Supported Python version: 3.5.2+
+Supported Python version: 3.5.4+
 
 Python script to allow the manipulation of steganographic images
 """
@@ -42,7 +42,7 @@ class Steganography():
         file_data = file_data.read('bin')
 
         file_name = bitstring.BitString(file_name.encode()).bin
-        file_name_length = '{0:08b}'.format(len(file_name))
+        file_name_length = '{0:032b}'.format(len(file_name))
         file_name = file_name_length + file_name
 
         bstring = file_name + file_data
@@ -53,13 +53,13 @@ class Steganography():
         """ Decode a file hidden in a 'png' or 'bmp' image """
         data = self._decode_bitstring()
 
-        file_name_length = data[:8].bin
+        file_name_length = data[:32].bin
         file_name_length = int(file_name_length, 2)
 
-        file_name = data[:8 + file_name_length][8:]
+        file_name = data[:32 + file_name_length][32:]
         file_name = file_name.tobytes().decode()
 
-        file_data = data[8 + file_name_length:]
+        file_data = data[32 + file_name_length:]
 
         with open('steg-' + file_name, 'wb+') as output_file:
             file_data.tofile(output_file)
