@@ -11,7 +11,12 @@ class steganography {
     public:
         explicit steganography(const std::string& input_image) {
             this -> input_image = input_image;
-            this -> load_image();
+            this -> image = cv::imread(input_image, -1);
+
+            if (!this -> image.data) {
+                std::cerr << "Failed to open input image no such file or directory" << std::endl;
+                exit(1);
+            }
         }
 
         void encode_file(const std::string&);
@@ -21,17 +26,12 @@ class steganography {
         std::string input_image;
         cv::Mat image;
 
-        void load_image();
-
         std::vector<bool> load_file(const std::string&);
         void save_file(const std::string&, const std::vector<bool>&);
-
         void encode_bitstring(std::vector<bool>&);
         std::vector<bool> decode_bitstring();
-
         unsigned char get_least_significant_bit(const unsigned char&);
         void set_least_significant_bit(unsigned char*, const bool&);
-
         std::vector<bool> string_to_binary(const std::string&);
         std::string binary_to_string(const std::vector<bool>&);
 };
