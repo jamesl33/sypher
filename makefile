@@ -30,6 +30,10 @@ $(OBJ_LST) : $(BUILD_DIR)/%.o : $(SRC_DIR)/%.$(SRC_EXT)
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "Compiled '"$<"' to '"$@"' successfully!"
 
+.PHONY: configure
+configure:
+	@curl https://raw.githubusercontent.com/myint/optparse/master/optparse.h --silent --create-dirs --output src/optparse.hpp
+
 .PHONY: clean
 clean:
 	@$(RM) $(OBJ_LST)
@@ -37,5 +41,6 @@ clean:
 
 .PHONY: remove
 remove: clean
+	@$(RM) "src/argparse.hpp"
 	@$(RM) $(BIN_DIR)/$(TARGET)
 	@echo "Executable removed!"
