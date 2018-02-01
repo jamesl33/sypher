@@ -56,16 +56,25 @@
     position: absolute;
     bottom: 0;
 
-    &.mod-text {
-        background: url("../media/text_content_box.png") center center no-repeat;
+    &.mod-encode-text {
+        background: url("../media/encodetext_content_box.png") center center no-repeat;
         background-size: 100%;
     }
 
-    &.mod-image {
-        background: url("../media/image_content_box.png") center center no-repeat;
+    &.mod-encode-image {
+        background: url("../media/encodeimage_content_box.png") center center no-repeat;
         background-size: 100%;
     }
 
+    &.mod-decode-text {
+        background: url("../media/decodetext_content_box.png") center center no-repeat;
+        background-size: 100%
+    }
+
+    &.mod-decode-image {
+        background: url("../media/decodeimage_content_box.png") center center no-repeat;
+        background-size: 100%;
+    }
     p {
         height: 0%;
         margin: 5%;
@@ -81,7 +90,6 @@
 }
 
 .next-button {
-    background-color: @royalblue;
     bottom: 0;
     position: absolute;
     width: 100vw;
@@ -90,6 +98,14 @@
     -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
     box-shadow:         inset 0 0 10px rgba(0,0,0,0.3);
     text-align: center;
+
+    &.mod-royalblue {
+        background-color: @royalblue;
+    }
+
+    &.mod-siennaorange {
+        background-color: @siennaorange;
+    }
     
     h3 {
         margin: 2%;
