@@ -1,4 +1,3 @@
-#include <iostream>
 #include "optparse.hpp"
 #include "steganography.hpp"
 

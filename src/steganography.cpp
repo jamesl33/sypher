@@ -1,9 +1,10 @@
 #include "steganography.hpp"
 
 void steganography::encode_file(const std::string& file_name) {
+    boost::filesystem::path file_path(file_name);
     std::vector<bool> bitstring;
     std::vector<bool> bitstring_file_data = this -> load_file(file_name);
-    std::vector<bool> bitstring_file_name = this -> string_to_binary(file_name);
+    std::vector<bool> bitstring_file_name = this -> string_to_binary(file_path.filename().string());
     std::bitset<32> bitstring_file_name_length = bitstring_file_name.size();
 
     for (unsigned int i = 0; i < bitstring_file_name_length.size(); i++) {
@@ -43,8 +44,11 @@ void steganography::decode_file() {
         std::cerr << "There doesn't appear to be an file stored in this image" << std::endl;
         exit(1);
     }
-
-    this -> save_file("steg-" + this -> binary_to_string(bitstring_file_name), bitstring_file_data);
+    if (this -> input_image_path.parent_path().string().size() <= 0) {
+        this -> save_file(this -> input_image_path.parent_path().string() + "steg-" + this -> binary_to_string(bitstring_file_name), bitstring_file_data);
+    } else {
+        this -> save_file(this -> input_image_path.parent_path().string() + "/" + "steg-" + this -> binary_to_string(bitstring_file_name), bitstring_file_data);
+    }
 };
 
 void steganography::encode_bitstring(std::vector<bool>& bitstring) {
@@ -92,12 +96,16 @@ void steganography::encode_bitstring(std::vector<bool>& bitstring) {
         }
     }
 
-    cv::imwrite("steg-" + this -> input_image, this -> image);
+    if (this -> input_image_path.parent_path().string().size() <= 0) {
+        cv::imwrite(this -> input_image_path.parent_path().string() + "steg-" + this -> input_image_path.filename().string(), this -> image);
+    } else {
+        cv::imwrite(this -> input_image_path.parent_path().string() + "/" + "steg-" + this -> input_image_path.filename().string(), this -> image);
+    }
 };
 
 std::vector<bool> steganography::decode_bitstring() {
-    int index = 0;
-    int length = 32;
+    unsigned int index = 0;
+    unsigned int length = 32;
     std::bitset<32> bitstring_length;
     std::vector<bool> bitstring;
 
@@ -121,7 +129,7 @@ std::vector<bool> steganography::decode_bitstring() {
                     }
 
                     if (index == 31) {
-                        length = bitstring_length.to_ulong();
+                        length += bitstring_length.to_ulong();
                     }
 
                 } else {

@@ -1,18 +1,19 @@
-#include <string>
-#include <vector>
 #include <bitset>
 #include <fstream>
 #include <iostream>
+#include <string>
+#include <vector>
 
+#include <boost/filesystem.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
 class steganography {
     public:
         // constructors
-        explicit steganography(const std::string& input_image) {
-            this -> input_image = input_image;
-            this -> image = cv::imread(input_image, -1);
+        explicit steganography(const std::string& input_image_path) {
+            this -> input_image_path = input_image_path;
+            this -> image = cv::imread(input_image_path, -1);
             this -> image_size  = this -> image.rows * this -> image.cols * this -> image.channels();
 
             if (!this -> image.data) {
@@ -28,7 +29,7 @@ class steganography {
     private:
         // attributes
         cv::Mat image;
-        std::string input_image;
+        boost::filesystem::path input_image_path;
         unsigned int image_size;
 
         // load/save file to/from a bitstring (std::vector<bool>)

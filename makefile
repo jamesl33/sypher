@@ -4,7 +4,7 @@ CC=g++
 CFLAGS = -std=c++11 $(shell pkg-config --cflags opencv)
 
 LINKER = g++
-LFLAGS = $(shell pkg-config --libs opencv)
+LFLAGS = $(shell pkg-config --libs opencv) -lboost_filesystem -lboost_system
 
 SRC_EXT = cpp
 INC_EXT = hpp
