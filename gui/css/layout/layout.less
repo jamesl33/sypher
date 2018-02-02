@@ -30,13 +30,81 @@ body {
 
 }
 
-header {
-    text-align: center;
-    background-color: #ffffff;
-    padding: 4px;
-    box-shadow: inset 0 -8px 14px -5px rgba(0, 0, 0, 0.3);
-    max-width: 100%;
+.rubric {
+    display: flex;
+    
+    &.mod-banner {
+        box-shadow: inset 0 -8px 14px -5px rgba(0, 0, 0, 0.3);
+
+        h1 {
+            padding: 5%;
+        }
+    }
+
+    &.mod-title {
+        box-shadow: 0 10px 20px 0px rgba(0,0,0,0.3);
+        
+        img {
+            width: 8%;
+            height: 8%;
+            margin: 3%;
+        }
+
+        p {
+            padding-right: 2%;
+            color: @iOSblue;
+        }
+    }   
+
+    h1 {
+        text-align: center;
+        margin: 0 auto;
+        padding: 1%;
+    }
+
 }
+    
+
+    // &.wrapper {
+    //     text-align: center;
+    //     background-color: #ffffff;
+    //     margin: 0 auto;display: flex;
+    //     text-align: center;
+    //     width: 100%;
+    //     display: flex;
+    //     text-align: center;
+        
+    //     &.banner {
+    //         box-shadow: inset 0 -8px 14px -5px rgba(0, 0, 0, 0.3);
+    //         padding-bottom: 3%;
+    
+    //         h1 {
+    //             padding-bottom: 2%;
+    //             margin: 5%;
+                
+    //         }
+    //     }
+
+    //     &.rubric {
+    //         box-shadow: 0 10px 20px 0px rgba(0,0,0,0.3);
+            
+            
+    
+    //         .arrow {
+    //             margin: 3%;
+    //         }
+    
+    //         img {
+    //             width: 35%;
+    //         }
+    
+    //         h1 {
+    //             margin: 0 auto;
+    //             text-align: center;
+    //         }
+    //     }
+    // }
+
 
 .tabs {
     display: flex;
