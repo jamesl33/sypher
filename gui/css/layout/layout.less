@@ -1,6 +1,7 @@
 body {
     margin: 0 auto;
     width: 100%;
+    // height: 100%;
     text-align: center;
     
     .loading-logo {
@@ -27,12 +28,23 @@ body {
             padding-top: 50%;
         }
     }
+}
 
+h1 {
+    font-weight: normal;
+}
+
+h2 {
+    font-weight: normal;
 }
 
 .rubric {
     display: flex;
-    
+    margin: 0 auto;
+    width: 100%;
+    top: 0;
+    position: sticky;
+
     &.mod-banner {
         box-shadow: inset 0 -8px 14px -5px rgba(0, 0, 0, 0.3);
 
@@ -55,19 +67,55 @@ body {
         p {
             color: @iOSblue;
             width: 25%;
+            padding: 1%;
+        }
+
+        h1 {
+            width: 50%;
         }
     }   
 
     h1 {
-        width: 50%;
         text-align: center;
         margin: 0 auto;
-        padding: 1%;
+        padding: 2%;
     }
 
+}
+
+.next-button {
+    bottom: 0;
+    position: fixed;
+    width: 100vw;
+    margin: 0;
+    -moz-box-shadow:    inset 0 0 10px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+    box-shadow:         inset 0 0 10px rgba(0,0,0,0.3);
+    text-align: center;
+
+    &.mod-absolute {
+        position: absolute;
+    }
+    &.mod-royalblue {
+        background-color: @royalblue;
+        text-decoration: none;
+    }
+
+    &.mod-siennaorange {
+        background-color: @siennaorange;
+        text-decoration: none;
+    }
+    
+    h3 {
+        margin: 2%;
+        color: @white;
+        font-size: 2em;
+        
+    }
 }
     
 .tabs {
     display: flex;
     text-align: center;
 }
+
