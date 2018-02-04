@@ -1,54 +1,54 @@
 body {
-    margin: 0 auto;
-    width: 100%;    
-    height: 100%;
-    text-align: center;
-    overflow: hidden;
-    
-    .loading-logo {
-        img {
-            width: 35%;
-            margin: auto;
-            position: absolute;
-            top: 0; 
-            left: 0; 
-            bottom: 0; 
-            right: 0;
-        }
-    }
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
 
-    .loading-spin {
-        img {
-            width: 10%;
-            margin: auto;
-            position: absolute;
-            top: 0; 
-            left: 0; 
-            bottom: 0; 
-            right: 0;
-            padding-top: 50%;
-        }
+  .loading-logo {
+    img {
+      width: 35%;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
     }
+  }
 
-    a {
-        text-decoration: none;
+  .loading-spin {
+    img {
+      width: 10%;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      padding-top: 50%;
     }
-}
-section {
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  section {
     display: flex;
     flex-flow: column;
     height: 100vh;
-}
+  }
 
-h1 {
+  h1 {
     font-weight: normal;
-}
+  }
 
-h2 {
+  h2 {
     font-weight: normal;
-}
+  }
 
-.rubric {
+  .rubric {
     display: flex;
     margin: 0 auto;
     width: 100%;
@@ -58,83 +58,81 @@ h2 {
     z-index: 100;
 
     &.mod-banner {
-        box-shadow: inset 0 -8px 14px -5px rgba(0, 0, 0, 0.3);
-        -moz-box-shadow: inset 0 -8px 14px -5px rgba(0, 0, 0, 0.3);
-        -webkit-box-shadow: inset 0 -8px 14px -5px rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0 -8px 14px -5px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: inset 0 -8px 14px -5px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: inset 0 -8px 14px -5px rgba(0, 0, 0, 0.3);
 
-        h1 {
-            padding: 5%;
-        }
+      h1 {
+        padding: 5%;
+      }
     }
 
     &.mod-title {
-        display: table;
-        box-shadow: 0 10px 20px 0px rgba(0,0,0,0.3);
-        -moz-box-shadow: 0 10px 20px 0px rgba(0,0,0,0.3);
-        -webkit-box-shadow: 0 10px 20px 0px rgba(0,0,0,0.3);
-        text-align:center; 
-        a { 
-            width:25%;
-            padding-left: 3%;
-            display: table-cell;
-            img {
-                width: 100%;
-            }
+      display: table;
+      box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      a {
+        width: 25%;
+        padding-left: 3%;
+        display: table-cell;
+        img {
+          width: 100%;
         }
-        p {
-            color: @iOSblue;
-            width: 25%;
-            padding: 1%;
-        }
+      }
+      p {
+        color: @iOSblue;
+        width: 25%;
+        padding: 1%;
+      }
 
-        h1 {
-            display: table-cell;
-            vertical-align: middle;
-            width: 50%;
-        }
-    }  
-
-    h1 {
-        text-align: center;
-        margin: 0 auto;
-        padding: 2%;
+      h1 {
+        display: table-cell;
+        vertical-align: middle;
+        width: 50%;
+      }
     }
 
-}
+    h1 {
+      text-align: center;
+      margin: 0 auto;
+      padding: 2%;
+    }
+  }
 
-.next-button {
+  .next-button {
     bottom: 0;
     position: fixed;
     width: 100vw;
     margin: 0;
-    -moz-box-shadow:    inset 0 0 10px rgba(0,0,0,0.3);
-    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
-    box-shadow:         inset 0 0 10px rgba(0,0,0,0.3);
+    -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
     text-align: center;
 
     &.mod-absolute {
-        position: absolute;
+      position: absolute;
     }
     &.mod-royalblue {
-        background-color: @royalblue;
-        text-decoration: none;
+      background-color: @royalblue;
+      text-decoration: none;
     }
 
     &.mod-siennaorange {
-        background-color: @siennaorange;
-        text-decoration: none;
+      background-color: @siennaorange;
+      text-decoration: none;
     }
-    
+
     h3 {
-        margin: 2%;
-        color: @white;
-        font-size: 2em;
-        
+      margin: 2%;
+      color: @white;
+      font-size: 2em;
     }
-}
-    
-.tabs {
+  }
+
+  .tabs {
     display: flex;
     text-align: center;
+  }
 }
-
