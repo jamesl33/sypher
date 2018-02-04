@@ -1,3 +1,10 @@
+# C++ build/binaries/fetched header files
 bin/*
 build/*
 src/optparse.hpp
+
+# Less - This file can now be fetched using install.bat/install.sh
+gui/less.js
+
+# Vscode
+.vscode
