@@ -18,13 +18,23 @@
             <h1>Encode </h1>
             <p></p>
         </header>
-
-        <div class="textbox-input">
-            <textarea onfocus="notEmpty()" id="textbox" placeholder="Enter text to be encoded..."></textarea>
+        <div class="upload-container">
+            <div class="placeholderbox">
+                <img src="../media/black-square.png">
+            </div>
+            <div class="browse-button">
+                <div class="browse-icon">
+                    <img src="../media/upload.png">
+                </div>
+                <div class="browse-text">
+                    <label for="upload">Upload</label>
+                    <input id="upload" type="file" accept="image/*">
+                </div>
+            </div>
         </div>
         <footer id="next" class="next-button mod-royalblue">
             <a href="" id="link">
-                <h3>NEXT</h3>
+                <input type="submit" value="NEXT">
             </a>
         </footer>
     </section>

@@ -5,7 +5,7 @@ function emptyTextbox() {
     }
     else {
         document.getElementById("next").style.backgroundColor = "#535ae8"
-        document.getElementById("link").href = "../index.html"
+        document.getElementById("link").href = "encode_upload_image.html"
     }   
     window.setTimeout("emptyTextbox();", 1000*0.1);
 }
