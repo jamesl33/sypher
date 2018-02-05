@@ -1,9 +1,28 @@
+html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  overflow: hidden;
+}
 body {
   margin: 0 auto;
   width: 100%;
   height: 100%;
   text-align: center;
   overflow: hidden;
+
+  div:active {
+    text-decoration: none;
+  }
+
+  img:active {
+    text-decoration: none;
+  }
 
   .loading-logo {
     img {
@@ -34,6 +53,10 @@ body {
     text-decoration: none;
   }
 
+  a:active {
+    text-decoration: none;
+  }
+
   section {
     display: flex;
     flex-flow: column;
@@ -42,10 +65,12 @@ body {
 
   h1 {
     font-weight: normal;
+    text-decoration: none;
   }
 
   h2 {
     font-weight: normal;
+    text-decoration: none;
   }
 
   .rubric {
@@ -135,6 +160,7 @@ body {
     }
 
     input {
+      width: 100vw;
       color: @white;
       font-size: 2em;
       margin: 2%;
@@ -142,6 +168,7 @@ body {
       -webkit-appearance: none;
       -moz-appearance: none;
       border: none;
+      background: none;
     }
   }
 
