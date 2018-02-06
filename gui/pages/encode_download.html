@@ -19,16 +19,18 @@
             <p></p>
         </header>
         <div class="upload-container">
-            <div class="placeholderbox">
-                <img id="preview" />
+            <div class="preview-box mod-image-preview">
+                <img id="receive" />
             </div>
             <div class="browse-button">
                 <div class="browse-icon">
                     <img src="../media/download.png">
                 </div>
                 <div class="browse-text mod-download">
-                    <label for="upload">Download</label>
-                    <input onchange="previewImage(upload)" id="upload" type="button" download="">
+                    <a href="../media/download.png" download>
+                        <label for="upload">Download</label>
+                        <input type="button" download="../media/download.png">
+                    </a>
                 </div>
             </div>
         </div>

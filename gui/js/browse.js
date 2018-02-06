@@ -13,9 +13,9 @@ function previewImage(input) {
   var reader = new FileReader();
   reader.onload = function() {
     var output = document.getElementById("preview");
-    document.getElementById('preview').style.boxShadow = "0px 0px 35px -1px rgba(0,122,255,0.7)";
+    document.getElementById("preview").style.boxShadow =
+      "0px 0px 35px -1px rgba(0,122,255,0.7)";
     output.src = reader.result;
-    
   };
   reader.readAsDataURL(event.target.files[0]);
 }
