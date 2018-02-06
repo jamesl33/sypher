@@ -4,7 +4,7 @@ function emptyUpload() {
     document.getElementById("link").href = "";
   } else {
     document.getElementById("next").style.backgroundColor = "#535ae8";
-    document.getElementById("link").href = "../index.html";
+    document.getElementById("link").href = "./encode_download.html";
   }
   window.setTimeout("emptyUpload();", 1000 * 0.1);
 }

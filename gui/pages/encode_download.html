@@ -12,7 +12,7 @@
 <body onload="emptyUpload()">
     <section>
         <header class="rubric mod-title">
-            <a href="encode_text_to_image.html">
+            <a href="encode_upload_image.html">
                 <img src="../media/arrow.png" />
             </a>
             <h1>Encode </h1>
@@ -24,17 +24,17 @@
             </div>
             <div class="browse-button">
                 <div class="browse-icon">
-                    <img src="../media/upload.png">
+                    <img src="../media/download.png">
                 </div>
-                <div class="browse-text mod-upload">
-                    <label for="upload">Upload</label>
-                    <input onchange="previewImage(this)" id="upload" type="file" accept="image/*">
+                <div class="browse-text mod-download">
+                    <label for="upload">Download</label>
+                    <input onchange="previewImage(upload)" id="upload" type="button" download="">
                 </div>
             </div>
         </div>
-        <footer id="next" class="next-button mod-royalblue">
-            <a href="./encode_download.html" id="link">
-                <input type="submit" value="NEXT">
+        <footer id="" class="next-button mod-royalblue">
+            <a href="" id="link">
+                <input type="submit" value="SHARE">
             </a>
         </footer>
     </section>
