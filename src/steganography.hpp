@@ -41,8 +41,8 @@ class steganography {
         std::vector<bool> decode_bitstring();
 
         // bit manipulation
-        unsigned char get_least_significant_bit(const unsigned char&);
-        void set_least_significant_bit(unsigned char*, const bool&);
+        inline unsigned char get_least_significant_bit(const unsigned char&);
+        inline void set_least_significant_bit(unsigned char*, const bool&);
 
         // convert between a string and binary
         std::vector<bool> string_to_binary(const std::string&);
