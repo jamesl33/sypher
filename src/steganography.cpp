@@ -1,7 +1,6 @@
 #include "steganography.hpp"
 
 /* Breakdown of how the files are stored in images.
-
    1. Read a file into a string of binary (in this case I am using a vector<bool>).
    2. Store the length of the string of binary in 32bit binary form.
    3. Prefix the string of binary with its length in binary. (This is how we know how much data to read when decoding).
@@ -184,16 +183,14 @@ std::vector<bool> steganography::load_file(const std::string& file_name) {
     return bitstring;
 };
 
-// TODO fix very subtle logic error
-
 // This is the inverse of 'load_file'.
 void steganography::save_file(const std::string& file_name, const std::vector<bool>& bitstring) {
     std::bitset<8> buffer;
     std::ofstream file(file_name, std::ios::binary);
 
     if (file.good()) {
-        for (unsigned int i = 1; i < bitstring.size() + 1; i++) {
-            if (i % 8 == 0) {
+        for (unsigned int i = 0; i < bitstring.size(); i++) {
+            if (i % 8 == 0 && i != 0) {
                 file.put(buffer.to_ulong());
             }
             buffer[i % 8] = bitstring[i];
