@@ -9,35 +9,38 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 </head>
 
-<body onload="encodeEmptyUpload()">
+<body>
     <section>
         <header class="rubric mod-title">
-            <a href="encode_text_to_image.html">
-                <img src="../media/arrow.png" />
+            <a href="decode_upload_image.html">
+                <img src="../media/arrow.png">
             </a>
-            <h1>Encode </h1>
+            <h1>Decode</h1>
             <p></p>
         </header>
         <div class="upload-container">
             <div class="preview-box mod-image-preview">
-                <img id="preview" />
+                <img id="receive">
             </div>
             <div class="browse-button">
                 <div class="browse-icon">
-                    <img src="../media/upload.png">
+                    <img src="../media/download.png">
                 </div>
-                <div class="browse-text mod-upload">
-                    <label for="upload">Upload</label>
-                    <input onchange="previewImage(this)" id="upload" type="file" accept="image/*">
+                <div class="browse-text mod-download">
+                    <a href="../media/download.png" download>
+                        <label for="upload">Download</label>
+                        <input type="button" download="../media/download.png">
+                    </a>
                 </div>
             </div>
         </div>
-        <footer id="next" class="next-button mod-royalblue">
-            <a href="./encode_download.html" id="link">
-                <input type="submit" value="NEXT">
+        <footer id="" class="next-button mod-siennaorange">
+            <a href="" id="link">
+                <input type="submit" value="???">
             </a>
         </footer>
     </section>
+
 </body>
 
 </html>

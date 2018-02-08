@@ -1,4 +1,4 @@
-function emptyUpload() {
+function encodeEmptyUpload() {
   if (document.getElementById("upload").value == "") {
     document.getElementById("next").style.backgroundColor = "#c0c0c0";
     document.getElementById("link").href = "";
@@ -6,7 +6,18 @@ function emptyUpload() {
     document.getElementById("next").style.backgroundColor = "#535ae8";
     document.getElementById("link").href = "./encode_download.html";
   }
-  window.setTimeout("emptyUpload();", 1000 * 0.1);
+  window.setTimeout("encodeEmptyUpload();", 1000 * 0.1);
+}
+
+function decodeEmptyUpload() {
+  if (document.getElementById("upload").value == "") {
+    document.getElementById("next").style.backgroundColor = "#c0c0c0";
+    document.getElementById("link").href = "";
+  } else {
+    document.getElementById("next").style.backgroundColor = "#e88e53";
+    document.getElementById("link").href = "./decode_download.html";
+  }
+  window.setTimeout("decodeEmptyUpload();", 1000 * 0.1);
 }
 
 function previewImage(input) {
