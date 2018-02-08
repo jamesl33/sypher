@@ -11,9 +11,9 @@
 class steganography {
     public:
         // constructors
-        explicit steganography(const std::string& input_image_path) {
-            this -> input_image_path = input_image_path;
-            this -> image = cv::imread(input_image_path, -1);
+        explicit steganography(const std::string& image_path) {
+            this -> image_path = image_path;
+            this -> image = cv::imread(image_path, -1);
             this -> image_size  = this -> image.rows * this -> image.cols * this -> image.channels();
 
             if (!this -> image.data) {
@@ -23,17 +23,17 @@ class steganography {
         }
 
         // encode/decode a file to/from an image
-        void encode_file(const std::string&);
+        void encode_file(const boost::filesystem::path&);
         void decode_file();
 
     private:
         // attributes
         cv::Mat image;
-        boost::filesystem::path input_image_path;
+        boost::filesystem::path image_path;
         unsigned int image_size;
 
         // load/save file to/from a bitstring (std::vector<bool>)
-        std::vector<bool> load_file(const std::string&);
+        std::vector<bool> load_file(const boost::filesystem::path&);
         void save_file(const std::string&, const std::vector<bool>&);
 
         // encode/decode bitstrings (std::vector<bool>) to/from and image
@@ -41,10 +41,13 @@ class steganography {
         std::vector<bool> decode_bitstring();
 
         // bit manipulation
-        inline unsigned char get_least_significant_bit(const unsigned char&);
-        inline void set_least_significant_bit(unsigned char*, const bool&);
+        inline unsigned char get_lsb(const unsigned char&);
+        inline void set_lsb(unsigned char*, const bool&);
 
-        // convert between a string and binary
-        std::vector<bool> string_to_binary(const std::string&);
+        // filename encoding/decoding
+        std::vector<bool> encode_filename(const std::string&);
+        std::string decode_filename(const std::vector<bool>&);
+
+        // string/binary conversion
         std::string binary_to_string(const std::vector<bool>&);
 };
